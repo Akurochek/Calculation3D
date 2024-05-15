@@ -1,0 +1,52 @@
+var digitPattern = /\d/;
+    if (digitPattern.test(this.value) && this.value>0){
+        let zip = 1;
+        for (let i = 0; i < scene.children.length; i++) {
+            if(scene.children[i].userData.name==this.id){
+                zip=i
+            }
+        }
+        const door = scene.children[zip]
+
+        if(door.userData.type=="дверь"){
+            var currentHash = window.location.hash;
+            // Разбиваем хэш на элементы по символу "%"
+            const hashParts = currentHash.split('%');
+            let hashPartsParts = hashParts[14].split('?');
+
+            hashPartsParts[door.userData.number-1]=document.querySelector('.input4').value
+            // Собираем все элементы обратно в строку с разделителем "%"
+            hashParts[14] = hashPartsParts.join('?')
+
+            var newHash = hashParts.join('%');
+            // Обновляем хэш браузера
+            window.location.hash = newHash;
+        }else{
+            var currentHash = window.location.hash;
+            // Разбиваем хэш на элементы по символу "%"
+            const hashParts = currentHash.split('%');
+            let hashPartsParts = hashParts[19].split('?');
+
+            hashPartsParts[door.userData.number-1]=document.querySelector('.input4').value
+            // Собираем все элементы обратно в строку с разделителем "%"
+            hashParts[19] = hashPartsParts.join('?')
+
+            var newHash = hashParts.join('%');
+            // Обновляем хэш браузера
+            window.location.hash = newHash;
+        }
+
+        
+        if(document.querySelector('.input4').value*1>Az1){
+            alert("ошибка")
+        }else{
+            
+            door.scale.y=document.querySelector('.input4').value*1
+            if(door.userData.type=="дверь"){
+                door.position.y=door.scale.y/2
+            }
+            
+        }
+    }else{
+        alert("ошибка")
+    }
