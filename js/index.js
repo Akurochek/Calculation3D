@@ -7,7 +7,7 @@ const scene = new THREE.Scene();
 const canvas = document.querySelector('.canvas');
 
 if(window.location.hash==""){
-    window.location.hash="#10%6%4%2%10%14%2%10%14%%%%%%%%%%%"
+    window.location.hash="#10$6$4$2$10$14$2$10$14$$$$$$$$$$$"
 }
 
 // Камера
@@ -48,7 +48,7 @@ pointlight6.position.set(0,-100,0)
 scene.add(pointlight6)
 
 // Обьект
-const hash = window.location.hash.substring(1).split("%");
+const hash = window.location.hash.substring(1).split("$");
 
 const length = parseInt(hash[0], 10),
       width = parseInt(hash[1], 10),
@@ -487,8 +487,8 @@ function createDoor() {
     camera.position.y=5
     
     var currentHash = window.location.hash;
-        // Разбиваем хэш на элементы по символу "%"
-        var hashParts = currentHash.split('%');
+        // Разбиваем хэш на элементы по символу "$"
+        var hashParts = currentHash.split('$');
         
         if (hashParts[10].length === 0) {
             hashParts[10] += "1";
@@ -504,8 +504,8 @@ function createDoor() {
             hashParts[14] += "?1.2";
         }
         
-        // Собираем все элементы обратно в строку с разделителем "%"
-        var newHash = hashParts.join('%');
+        // Собираем все элементы обратно в строку с разделителем "$"
+        var newHash = hashParts.join('$');
         // Обновляем хэш браузера
         window.location.hash = newHash;
         
@@ -541,8 +541,8 @@ function createWindow() {
     camera.position.y=5
     
     var currentHash = window.location.hash;
-        // Разбиваем хэш на элементы по символу "%"
-        var hashParts = currentHash.split('%');
+        // Разбиваем хэш на элементы по символу "$"
+        var hashParts = currentHash.split('$');
         if (hashParts[15].length === 0) {
             hashParts[15] += "1";
             hashParts[16] += "0";
@@ -556,8 +556,8 @@ function createWindow() {
             hashParts[18] += "?0.8";
             hashParts[19] += "?1.2";
         }
-        // Собираем все элементы обратно в строку с разделителем "%"
-        var newHash = hashParts.join('%');
+        // Собираем все элементы обратно в строку с разделителем "$"
+        var newHash = hashParts.join('$');
         // Обновляем хэш браузера
         window.location.hash = newHash;
 
@@ -628,28 +628,28 @@ function zinput2(){
             lastontherightopening=document.querySelector('.input2').value
             if(door.userData.type=="дверь"){
                 var currentHash = window.location.hash;
-                // Разбиваем хэш на элементы по символу "%"
-                const hashParts = currentHash.split('%');
+                // Разбиваем хэш на элементы по символу "$"
+                const hashParts = currentHash.split('$');
                 let hashPartsParts = hashParts[12].split('?');
         
                 hashPartsParts[door.userData.number-1]=document.querySelector('.input2').value
-                // Собираем все элементы обратно в строку с разделителем "%"
+                // Собираем все элементы обратно в строку с разделителем "$"
                 hashParts[12] = hashPartsParts.join('?')
         
-                var newHash = hashParts.join('%');
+                var newHash = hashParts.join('$');
                 // Обновляем хэш браузера
                 window.location.hash = newHash;
             }else{
                 var currentHash = window.location.hash;
-                // Разбиваем хэш на элементы по символу "%"
-                const hashParts = currentHash.split('%');
+                // Разбиваем хэш на элементы по символу "$"
+                const hashParts = currentHash.split('$');
                 let hashPartsParts = hashParts[17].split('?');
         
                 hashPartsParts[door.userData.number-1]=document.querySelector('.input2').value
-                // Собираем все элементы обратно в строку с разделителем "%"
+                // Собираем все элементы обратно в строку с разделителем "$"
                 hashParts[17] = hashPartsParts.join('?')
         
-                var newHash = hashParts.join('%');
+                var newHash = hashParts.join('$');
                 // Обновляем хэш браузера
                 window.location.hash = newHash;
             }
@@ -663,28 +663,28 @@ function zinput2(){
             door.position.z=document.querySelector('.input2').value*1+(door.scale.x/2)-By
             if(door.userData.type=="дверь"){
                 var currentHash = window.location.hash;
-                // Разбиваем хэш на элементы по символу "%"
-                const hashParts = currentHash.split('%');
+                // Разбиваем хэш на элементы по символу "$"
+                const hashParts = currentHash.split('$');
                 let hashPartsParts = hashParts[12].split('?');
         
                 hashPartsParts[door.userData.number-1]=document.querySelector('.input2').value
-                // Собираем все элементы обратно в строку с разделителем "%"
+                // Собираем все элементы обратно в строку с разделителем "$"
                 hashParts[12] = hashPartsParts.join('?')
         
-                var newHash = hashParts.join('%');
+                var newHash = hashParts.join('$');
                 // Обновляем хэш браузера
                 window.location.hash = newHash;
             }else{
                 var currentHash = window.location.hash;
-                // Разбиваем хэш на элементы по символу "%"
-                const hashParts = currentHash.split('%');
+                // Разбиваем хэш на элементы по символу "$"
+                const hashParts = currentHash.split('$');
                 let hashPartsParts = hashParts[17].split('?');
         
                 hashPartsParts[door.userData.number-1]=document.querySelector('.input2').value
-                // Собираем все элементы обратно в строку с разделителем "%"
+                // Собираем все элементы обратно в строку с разделителем "$"
                 hashParts[17] = hashPartsParts.join('?')
         
-                var newHash = hashParts.join('%');
+                var newHash = hashParts.join('$');
                 // Обновляем хэш браузера
                 window.location.hash = newHash;
             }
@@ -698,28 +698,28 @@ function zinput2(){
             door.position.x=-document.querySelector('.input2').value*1-(door.scale.x/2)+Bx
             if(door.userData.type=="дверь"){
                 var currentHash = window.location.hash;
-                // Разбиваем хэш на элементы по символу "%"
-                const hashParts = currentHash.split('%');
+                // Разбиваем хэш на элементы по символу "$"
+                const hashParts = currentHash.split('$');
                 let hashPartsParts = hashParts[12].split('?');
         
                 hashPartsParts[door.userData.number-1]=document.querySelector('.input2').value
-                // Собираем все элементы обратно в строку с разделителем "%"
+                // Собираем все элементы обратно в строку с разделителем "$"
                 hashParts[12] = hashPartsParts.join('?')
         
-                var newHash = hashParts.join('%');
+                var newHash = hashParts.join('$');
                 // Обновляем хэш браузера
                 window.location.hash = newHash;
             }else{
                 var currentHash = window.location.hash;
-                // Разбиваем хэш на элементы по символу "%"
-                const hashParts = currentHash.split('%');
+                // Разбиваем хэш на элементы по символу "$"
+                const hashParts = currentHash.split('$');
                 let hashPartsParts = hashParts[17].split('?');
         
                 hashPartsParts[door.userData.number-1]=document.querySelector('.input2').value
-                // Собираем все элементы обратно в строку с разделителем "%"
+                // Собираем все элементы обратно в строку с разделителем "$"
                 hashParts[17] = hashPartsParts.join('?')
         
-                var newHash = hashParts.join('%');
+                var newHash = hashParts.join('$');
                 // Обновляем хэш браузера
                 window.location.hash = newHash;
             }
@@ -733,28 +733,28 @@ function zinput2(){
             door.position.z=-document.querySelector('.input2').value*1-(door.scale.x/2)+By
             if(door.userData.type=="дверь"){
                 var currentHash = window.location.hash;
-                // Разбиваем хэш на элементы по символу "%"
-                const hashParts = currentHash.split('%');
+                // Разбиваем хэш на элементы по символу "$"
+                const hashParts = currentHash.split('$');
                 let hashPartsParts = hashParts[12].split('?');
         
                 hashPartsParts[door.userData.number-1]=document.querySelector('.input2').value
-                // Собираем все элементы обратно в строку с разделителем "%"
+                // Собираем все элементы обратно в строку с разделителем "$"
                 hashParts[12] = hashPartsParts.join('?')
         
-                var newHash = hashParts.join('%');
+                var newHash = hashParts.join('$');
                 // Обновляем хэш браузера
                 window.location.hash = newHash;
             }else{
                 var currentHash = window.location.hash;
-                // Разбиваем хэш на элементы по символу "%"
-                const hashParts = currentHash.split('%');
+                // Разбиваем хэш на элементы по символу "$"
+                const hashParts = currentHash.split('$');
                 let hashPartsParts = hashParts[17].split('?');
         
                 hashPartsParts[door.userData.number-1]=document.querySelector('.input2').value
-                // Собираем все элементы обратно в строку с разделителем "%"
+                // Собираем все элементы обратно в строку с разделителем "$"
                 hashParts[17] = hashPartsParts.join('?')
         
-                var newHash = hashParts.join('%');
+                var newHash = hashParts.join('$');
                 // Обновляем хэш браузера
                 window.location.hash = newHash;
             }
@@ -791,28 +791,28 @@ function zinput1(){
         lastupopening=document.querySelector('.input1').value
         if(door.userData.type=="дверь"){
             var currentHash = window.location.hash;
-            // Разбиваем хэш на элементы по символу "%"
-            const hashParts = currentHash.split('%');
+            // Разбиваем хэш на элементы по символу "$"
+            const hashParts = currentHash.split('$');
             let hashPartsParts = hashParts[11].split('?');
     
             hashPartsParts[door.userData.number-1]=document.querySelector('.input1').value
-            // Собираем все элементы обратно в строку с разделителем "%"
+            // Собираем все элементы обратно в строку с разделителем "$"
             hashParts[11] = hashPartsParts.join('?')
     
-            var newHash = hashParts.join('%');
+            var newHash = hashParts.join('$');
             // Обновляем хэш браузера
             window.location.hash = newHash;
         }else{
             var currentHash = window.location.hash;
-            // Разбиваем хэш на элементы по символу "%"
-            const hashParts = currentHash.split('%');
+            // Разбиваем хэш на элементы по символу "$"
+            const hashParts = currentHash.split('$');
             let hashPartsParts = hashParts[16].split('?');
     
             hashPartsParts[door.userData.number-1]=document.querySelector('.input1').value
-            // Собираем все элементы обратно в строку с разделителем "%"
+            // Собираем все элементы обратно в строку с разделителем "$"
             hashParts[16] = hashPartsParts.join('?')
     
-            var newHash = hashParts.join('%');
+            var newHash = hashParts.join('$');
             // Обновляем хэш браузера
             window.location.hash = newHash;
         }
@@ -850,28 +850,28 @@ function zinput3(){
         door.scale.x=document.querySelector('.input3').value*1
         if(door.userData.type=="дверь"){
             var currentHash = window.location.hash;
-            // Разбиваем хэш на элементы по символу "%"
-            const hashParts = currentHash.split('%');
+            // Разбиваем хэш на элементы по символу "$"
+            const hashParts = currentHash.split('$');
             let hashPartsParts = hashParts[13].split('?');
     
             hashPartsParts[door.userData.number-1]=document.querySelector('.input3').value
-            // Собираем все элементы обратно в строку с разделителем "%"
+            // Собираем все элементы обратно в строку с разделителем "$"
             hashParts[13] = hashPartsParts.join('?')
     
-            var newHash = hashParts.join('%');
+            var newHash = hashParts.join('$');
             // Обновляем хэш браузера
             window.location.hash = newHash;
         }else{
             var currentHash = window.location.hash;
-            // Разбиваем хэш на элементы по символу "%"
-            const hashParts = currentHash.split('%');
+            // Разбиваем хэш на элементы по символу "$"
+            const hashParts = currentHash.split('$');
             let hashPartsParts = hashParts[18].split('?');
     
             hashPartsParts[door.userData.number-1]=document.querySelector('.input3').value
-            // Собираем все элементы обратно в строку с разделителем "%"
+            // Собираем все элементы обратно в строку с разделителем "$"
             hashParts[18] = hashPartsParts.join('?')
     
-            var newHash = hashParts.join('%');
+            var newHash = hashParts.join('$');
             // Обновляем хэш браузера
             window.location.hash = newHash;
         }
@@ -903,34 +903,34 @@ function zinput4(){
                 door.position.y=door.scale.y/2
                 if(door.userData.type=="дверь"){
                     var currentHash = window.location.hash;
-                    // Разбиваем хэш на элементы по символу "%"
-                    const hashParts = currentHash.split('%');
+                    // Разбиваем хэш на элементы по символу "$"
+                    const hashParts = currentHash.split('$');
                     let hashPartsParts = hashParts[14].split('?');
                     let hashPartsParts2 = hashParts[11].split('?');
             
                     hashPartsParts[door.userData.number-1]=document.querySelector('.input4').value
                     hashPartsParts2[door.userData.number-1]=0
-                    // Собираем все элементы обратно в строку с разделителем "%"
+                    // Собираем все элементы обратно в строку с разделителем "$"
                     hashParts[14] = hashPartsParts.join('?')
                     hashParts[11] = hashPartsParts2.join('?')
             
-                    var newHash = hashParts.join('%');
+                    var newHash = hashParts.join('$');
                     // Обновляем хэш браузера
                     window.location.hash = newHash;
                 }else{
                     var currentHash = window.location.hash;
-                    // Разбиваем хэш на элементы по символу "%"
-                    const hashParts = currentHash.split('%');
+                    // Разбиваем хэш на элементы по символу "$"
+                    const hashParts = currentHash.split('$');
                     let hashPartsParts = hashParts[19].split('?');
                     let hashPartsParts2 = hashParts[16].split('?');
             
                     hashPartsParts[door.userData.number-1]=document.querySelector('.input4').value
                     hashPartsParts2[door.userData.number-1]=0
-                    // Собираем все элементы обратно в строку с разделителем "%"
+                    // Собираем все элементы обратно в строку с разделителем "$"
                     hashParts[19] = hashPartsParts.join('?')
                     hashParts[16] = hashPartsParts2.join('?')
             
-                    var newHash = hashParts.join('%');
+                    var newHash = hashParts.join('$');
                     // Обновляем хэш браузера
                     window.location.hash = newHash;
                 }
@@ -947,28 +947,28 @@ function zinput4(){
                 door.scale.y=document.querySelector('.input4').value*1
                 if(door.userData.type=="дверь"){
                     var currentHash = window.location.hash;
-                    // Разбиваем хэш на элементы по символу "%"
-                    const hashParts = currentHash.split('%');
+                    // Разбиваем хэш на элементы по символу "$"
+                    const hashParts = currentHash.split('$');
                     let hashPartsParts = hashParts[14].split('?');
             
                     hashPartsParts[door.userData.number-1]=document.querySelector('.input4').value
-                    // Собираем все элементы обратно в строку с разделителем "%"
+                    // Собираем все элементы обратно в строку с разделителем "$"
                     hashParts[14] = hashPartsParts.join('?')
             
-                    var newHash = hashParts.join('%');
+                    var newHash = hashParts.join('$');
                     // Обновляем хэш браузера
                     window.location.hash = newHash;
                 }else{
                     var currentHash = window.location.hash;
-                    // Разбиваем хэш на элементы по символу "%"
-                    const hashParts = currentHash.split('%');
+                    // Разбиваем хэш на элементы по символу "$"
+                    const hashParts = currentHash.split('$');
                     let hashPartsParts = hashParts[19].split('?');
             
                     hashPartsParts[door.userData.number-1]=document.querySelector('.input4').value
-                    // Собираем все элементы обратно в строку с разделителем "%"
+                    // Собираем все элементы обратно в строку с разделителем "$"
                     hashParts[19] = hashPartsParts.join('?')
             
-                    var newHash = hashParts.join('%');
+                    var newHash = hashParts.join('$');
                     // Обновляем хэш браузера
                     window.location.hash = newHash;
                 }
@@ -1084,7 +1084,7 @@ function openings(draggable){
                 }else{
                     hashParts[15] = hashPartsParts2.join('?')
                 }
-                var newHash = hashParts.join('%');
+                var newHash = hashParts.join('$');
                 // Обновляем хэш браузера
                 window.location.hash = newHash;
     
@@ -1152,8 +1152,8 @@ function openings(draggable){
 
         document.querySelector('.inputNum2').innerText = draggable.userData.side
         var currentHash = window.location.hash;
-            // Разбиваем хэш на элементы по символу "%"
-        const hashParts = currentHash.split('%');
+            // Разбиваем хэш на элементы по символу "$"
+        const hashParts = currentHash.split('$');
         
         if(draggable.userData.type=="дверь"){
             let hashPartsParts = hashParts[12].split('?');
@@ -1185,7 +1185,7 @@ function openings(draggable){
                 hashPartsParts1[draggable.userData.number-1]= draggable.position.y - (draggable.scale.y / 2) - Bz
                 document.querySelector('.input1').value = draggable.position.y - (draggable.scale.y / 2) - Bz
             }
-            // Собираем все элементы обратно в строку с разделителем "%"
+            // Собираем все элементы обратно в строку с разделителем "$"
             hashParts[12] = hashPartsParts.join('?')
             hashParts[11] = hashPartsParts1.join('?');
             hashParts[10] = hashPartsParts2.join('?');
@@ -1221,14 +1221,14 @@ function openings(draggable){
                 hashPartsParts1[draggable.userData.number-1]= draggable.position.y - (draggable.scale.y / 2) - Bz
                 document.querySelector('.input1').value = draggable.position.y - (draggable.scale.y / 2) - Bz
             }
-            // Собираем все элементы обратно в строку с разделителем "%"
+            // Собираем все элементы обратно в строку с разделителем "$"
             hashParts[17] = hashPartsParts.join('?')
             hashParts[16] = hashPartsParts1.join('?');
             hashParts[15] = hashPartsParts2.join('?')
             
         }
         
-        var newHash = hashParts.join('%');
+        var newHash = hashParts.join('$');
             // Обновляем хэш браузера
         window.location.hash = newHash;
 
@@ -1257,11 +1257,11 @@ document.querySelector('.input5').addEventListener("change", (event) => {
         lastlength=length
 
         var currentHash = window.location.hash;
-        // Разбиваем хэш на элементы по символу "%"
-    var hashParts = currentHash.split('%');
+        // Разбиваем хэш на элементы по символу "$"
+    var hashParts = currentHash.split('$');
     hashParts[0] = length;
-        // Собираем все элементы обратно в строку с разделителем "%"
-    var newHash = hashParts.join('%');
+        // Собираем все элементы обратно в строку с разделителем "$"
+    var newHash = hashParts.join('$');
         // Обновляем хэш браузера
     window.location.hash = newHash;
 
@@ -1448,11 +1448,11 @@ document.querySelector(".input6").addEventListener("change", (event) => {
     if (digitPattern.test(width) && width>0 && maxpositionwidth*1<=w ){
     lastwidth=width
     var currentHash = window.location.hash;
-        // Разбиваем хэш на элементы по символу "%"
-    var hashParts = currentHash.split('%');
+        // Разбиваем хэш на элементы по символу "$"
+    var hashParts = currentHash.split('$');
     hashParts[1] = width;
-        // Собираем все элементы обратно в строку с разделителем "%"
-    var newHash = hashParts.join('%');
+        // Собираем все элементы обратно в строку с разделителем "$"
+    var newHash = hashParts.join('$');
         // Обновляем хэш браузера
     window.location.hash = newHash;
 
@@ -1638,11 +1638,11 @@ document.querySelector(".input7").addEventListener("change", (event) => {
     if (digitPattern.test(height) && height>0 && maxpositionheight<=height){
         lastheight=height
     var currentHash = window.location.hash;
-        // Разбиваем хэш на элементы по символу "%"
-    var hashParts = currentHash.split('%');
+        // Разбиваем хэш на элементы по символу "$"
+    var hashParts = currentHash.split('$');
     hashParts[2] = height;
-        // Собираем все элементы обратно в строку с разделителем "%"
-    var newHash = hashParts.join('%');
+        // Собираем все элементы обратно в строку с разделителем "$"
+    var newHash = hashParts.join('$');
         // Обновляем хэш браузера
     window.location.hash = newHash;
 
@@ -1799,11 +1799,11 @@ document.querySelector(".input7").addEventListener("change", (event) => {
 
 document.querySelector('.oneRoof').addEventListener("click", (event) => {
     var currentHash = window.location.hash;
-        // Разбиваем хэш на элементы по символу "%"
-        var hashParts = currentHash.split('%');
+        // Разбиваем хэш на элементы по символу "$"
+        var hashParts = currentHash.split('$');
         hashParts[10] = true;
-        // Собираем все элементы обратно в строку с разделителем "%"
-        var newHash = hashParts.join('%');
+        // Собираем все элементы обратно в строку с разделителем "$"
+        var newHash = hashParts.join('$');
         // Обновляем хэш браузера
         window.location.hash = newHash;
 
@@ -1855,11 +1855,11 @@ document.querySelector('.oneRoof').addEventListener("click", (event) => {
 
 document.querySelector('.twoRoof').addEventListener("click", (event) => {
     var currentHash = window.location.hash;
-        // Разбиваем хэш на элементы по символу "%"
-        var hashParts = currentHash.split('%');
+        // Разбиваем хэш на элементы по символу "$"
+        var hashParts = currentHash.split('$');
         hashParts[9] = false;
-        // Собираем все элементы обратно в строку с разделителем "%"
-        var newHash = hashParts.join('%');
+        // Собираем все элементы обратно в строку с разделителем "$"
+        var newHash = hashParts.join('$');
         // Обновляем хэш браузера
         window.location.hash = newHash;
         
@@ -2038,8 +2038,8 @@ document.querySelectorAll('.option').forEach(item => {
         document.querySelector(item.getAttribute('data-target')).innerHTML=selectTextMassive[item.id]
         var currentHash = window.location.hash;
 
-        // Разбиваем хэш на элементы по символу "%"
-        var hashParts = currentHash.split('%');
+        // Разбиваем хэш на элементы по символу "$"
+        var hashParts = currentHash.split('$');
 
         if(itswall){
             if(item.getAttribute('data-target')==".select-text1"){
@@ -2060,8 +2060,8 @@ document.querySelectorAll('.option').forEach(item => {
         }
 
 
-        // Собираем все элементы обратно в строку с разделителем "%"
-        var newHash = hashParts.join('%');
+        // Собираем все элементы обратно в строку с разделителем "$"
+        var newHash = hashParts.join('$');
 
         // Обновляем хэш браузера
         window.location.hash = newHash;
@@ -2090,7 +2090,7 @@ document.querySelector('.cover6').addEventListener("click", (event) => {
 
     let hash = window.location.hash;
     hash=hash.substring(1)
-    hash=hash.split("%")
+    hash=hash.split("$")
 
     if(itswall){
         document.querySelector(".select-text1").textContent=selectTextMassive[hash[3]]
@@ -2121,7 +2121,7 @@ document.querySelector('.cover8').addEventListener("click", (event) => {
     if(nowType=="дверь"){
         var currentHash = window.location.hash;
         // Разбиваем хэш на элементы по символу "$"
-        var hashParts = currentHash.split('%');
+        var hashParts = currentHash.split('$');
         let hashPartsParts1 = hashParts[10].split('?');
         let hashPartsParts2 = hashParts[11].split('?');
         let hashPartsParts3 = hashParts[12].split('?');
@@ -2140,7 +2140,7 @@ document.querySelector('.cover8').addEventListener("click", (event) => {
         hashParts[13] = hashPartsParts4.join('?')
         hashParts[14] = hashPartsParts5.join('?')
 
-        var newHash = hashParts.join('%');
+        var newHash = hashParts.join('$');
         // Обновляем хэш браузера
         window.location.hash = newHash;
 
@@ -2148,7 +2148,7 @@ document.querySelector('.cover8').addEventListener("click", (event) => {
     }else{
         var currentHash = window.location.hash;
         // Разбиваем хэш на элементы по символу "$"
-        var hashParts = currentHash.split('%');
+        var hashParts = currentHash.split('$');
         let hashPartsParts1 = hashParts[15].split('?');
         let hashPartsParts2 = hashParts[16].split('?');
         let hashPartsParts3 = hashParts[17].split('?');
@@ -2167,7 +2167,7 @@ document.querySelector('.cover8').addEventListener("click", (event) => {
         hashParts[18] = hashPartsParts4.join('?')
         hashParts[19] = hashPartsParts5.join('?')
 
-        var newHash = hashParts.join('%');
+        var newHash = hashParts.join('$');
         // Обновляем хэш браузера
         window.location.hash = newHash;
 
